@@ -2,11 +2,10 @@ import './App.css';
 import {createStore} from 'redux'
 import { Provider } from 'react-redux';
 import Header from './Components/Header';
-import HomePage from './Components/HomePage';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import DetailsPage from './Components/DetailsPage'
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import CounterReducer from './Store/reducers/CounterReducer';
 import ConterContainer from './Components/ConterContainer';
+import DetailsPage from './Components/DetailsPage'
 
 const store=createStore(CounterReducer)
 function App() {
@@ -14,13 +13,17 @@ function App() {
 <>
 <Provider store={store}>
 <Header/>
-<ConterContainer/>
-      <Router> 
+<Router>
         <Switch>
-          
-          <Route exact path="/bots-details/:id" component={DetailsPage}/>
-        </Switch>
+                <Route exact path="/bots">
+                  <ConterContainer/>
+                </Route>
 
+                <Route path="/bots-details/:id">  
+                  <DetailsPage/>
+                </Route>
+
+        </Switch>
       </Router>
 </Provider>
      
