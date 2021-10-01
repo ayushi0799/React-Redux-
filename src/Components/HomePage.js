@@ -37,7 +37,7 @@ function HomePage({value,up}) {
                 <div className="buttons">
         
                             <Link to={"/bots-details/"+(item.id)}> 
-                            <button>algo</button>
+                            <button>Algorithm</button>
                             </Link>
                             
                     <button onClick={up}>
