@@ -1,7 +1,8 @@
 import React from 'react'
 import Data from './Data.json'
-import {Link, BrowserRouter as Router, Route, useHistory, Switch} from "react-router-dom"
+import {Link} from "react-router-dom"
 import DetailsPage from './DetailsPage'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
 
@@ -34,17 +35,11 @@ function HomePage({value,up}) {
                     {item.cagr}
                 </div>
                 <div className="buttons">
-                    <Router>
-                       
-                        <Link to={"/bots-details/"+(item.id)}> <button>See Algo
-                            </button> </Link>
+        
+                            <Link to={"/bots-details/"+(item.id)}> 
+                            <button>algo</button>
+                            </Link>
                             
-                    <Switch>
-                    <Route exact path="/bots-details/:id" component={DetailsPage} ></Route>
-                    
-                    </Switch>
-                    
-                    </Router>
                     <button onClick={up}>
                     Buy
                     </button>
